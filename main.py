@@ -48,7 +48,7 @@ def main():
         db = client[os.getenv("DB_NAME", "learning_mongo")] 
         console.print("✅ [green]Conexión exitosa a MongoDB[/green]") 
     except Exception as e: 
-        console.print(f"❌ [red]Error al conectar a MongoDB: {e}[/red]") 
+        console.print(f"[red]Error al conectar a MongoDB: {e}[/red]") 
         return 
     
     modules = { 
