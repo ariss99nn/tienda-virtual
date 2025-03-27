@@ -257,7 +257,7 @@ def run(db):
                         console.print(f"\n✅ [green]Exportación completada en {output_file}[/green]")
                     else:
                         error = process.stderr.read().decode()
-                        console.print(f"\n❌ [red]Error en mongoexport: {error}[/red]")
+                        console.print(f"\n [red]Error en mongoexport: {error}[/red]")
                         
             except Exception as e:
                 console.print(f"\n❌ [red]Error al exportar colección: {e}[/red]")

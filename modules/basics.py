@@ -70,7 +70,7 @@ while True:
         db_name = console.input("Ingrese el nombre de la BD a cambiar: ")
         try:
             new_db = db.client[db_name]
-            console.print(f"\n✅ [green]Cambiado a la base de datos '{db_name}'[/green]")
+            console.print(f"\n[green]Cambiado a la base de datos '{db_name}'[/green]")
             # Mostrar colecciones en la nueva BD
             cols = new_db.list_collection_names()
             if cols:
@@ -80,9 +80,9 @@ while True:
             else:
                 console.print(f"\ni️ La BD '{db_name}' no tiene colecciones")
         except Exception as e:
-            console.print(f"\n❌ [red]Error: {e}[/red]")
+            console.print(f"\n [red]Error: {e}[/red]")
         # ... (implementar otras opciones)
     else:
-        console.print("\n❌[red]Opción inválida. Intente nuevamente.[/red]")
+        console.print("\n[red]Opción inválida. Intente nuevamente.[/red]")
         console.input("\nPresione Enter para continuar...")
         console.clear()

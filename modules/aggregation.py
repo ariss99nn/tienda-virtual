@@ -3,6 +3,7 @@ from rich.table import Table
 from rich.panel import Panel
 from bson.json_util import dumps
 import json
+import random
 
 console = Console()
 
@@ -121,10 +122,10 @@ def run(db):
                 pipeline = json.loads(pipeline_input)
                 print_aggregation(collection, pipeline)
             except Exception as e:
-                console.print(f"\n❌ [red]Error: {e}[/red]")
+                console.print(f"\n [red]Error: {e}[/red]")
 
         else:
-            console.print("\n❌ [red]Opción inválida. Intente nuevamente.[/red]")
+            console.print("\n [red]Opción inválida. Intente nuevamente.[/red]")
 
         console.input("\nPresione Enter para continuar...")
         console.clear()
@@ -138,7 +139,7 @@ def print_aggregation(collection, pipeline):
         results = list(collection.aggregate(pipeline))
         
         if not results:
-            console.print("\nℹ️ No se encontraron resultados")
+            console.print("\nℹ No se encontraron resultados")
             return
 
         # Crear tabla con los resultados
@@ -153,7 +154,7 @@ def print_aggregation(collection, pipeline):
 
         console.print(table)
     except Exception as e:
-        console.print(f"\n❌ [red]Error en agregación: {e}[/red]")
+        console.print(f"\n [red]Error en agregación: {e}[/red]")
 
 def create_sample_sales_data(db):
     """Crea datos de ejemplo para el módulo de agregación"""
@@ -171,4 +172,4 @@ def create_sample_sales_data(db):
         ventas.append(venta)
     
     db["ventas"].insert_many(ventas)
-    console.print(f"✅ [green]Insertadas {len(ventas)} ventas de ejemplo[/green]")
+    console.print(f" [green]Insertadas {len(ventas)} ventas de ejemplo[/green]")
