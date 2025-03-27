@@ -4,6 +4,7 @@ from rich.panel import Panel
 from rich.progress import Progress
 import subprocess
 import os
+import time
 from datetime import datetime
 
 console = Console()
